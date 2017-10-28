@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 103b23564f4b6f447af102cedc86a9f6
+timeCreated: 1495335645
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - mainButton: {fileID: 114410788982086434, guid: a4461920f73b077438704a78d9bc1180,
+      type: 2}
+  - restartButton: {fileID: 114955004595039180, guid: a4461920f73b077438704a78d9bc1180,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

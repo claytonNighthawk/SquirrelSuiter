@@ -3,6 +3,7 @@
 Squirrel Suiter is an endless “flyer” game where you play as a jetpack-equipped flying squirrel, avoiding obstacles and munching acorns to gain the highest score.
 
 •	Squirrel Suiter has multiple procedurally generated levels each with a different theme. 
+
 •	My contributions to original project include: physics, UI, level design.
 
 •	Extensions to the game I made myself: ported the game to android, added full controller support, created an options menu, and cleaned and refactored the codebase.

@@ -9,6 +9,9 @@ public class MobileController : MonoBehaviour {
 
     public void Start() {
         minSwipeDist = PlayerPrefs.GetFloat("swipeDist");
+        if (minSwipeDist == 0) {
+            minSwipeDist = 5;
+        }
     }
 
 	void FixedUpdate() {

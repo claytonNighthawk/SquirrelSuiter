@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class CameraController : MonoBehaviour {
@@ -8,11 +9,15 @@ public class CameraController : MonoBehaviour {
     public float shakeDiration = 1.0f;
     public float magnitude = 1.0f;
     private bool shaking;
+    public Text test;
+    public Text test2;
 
     private Vector3 start;
     private Vector3 offset;
 
     void Start() {
+        test.text = PlayerPrefs.GetFloat("cameraY").ToString();
+        test2.text = PlayerPrefs.GetFloat("cameraZ").ToString();
         start.Set(transform.position.x, PlayerPrefs.GetFloat("cameraY"), PlayerPrefs.GetFloat("cameraZ"));
         transform.position = start;
         offset = transform.position - player.transform.position;

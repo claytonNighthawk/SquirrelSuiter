@@ -57,8 +57,12 @@ public class MainMenu : MonoBehaviour {
         levelSelect.enabled = false;
         optionsMenu.enabled = false;
         mobileOptions.enabled = false;
+        if (PlayerPrefs.GetFloat("cameraY") == 0) {
+            PlayerPrefs.SetFloat("cameraY", 17.0f);
+            PlayerPrefs.SetFloat("cameraZ", -7.0f);
+        }
 
-    #if !MOBILE_INPUT
+#if !MOBILE_INPUT
         optionsMobileMenu.transform.gameObject.SetActive(false);
         //optionsExit.rectTransform.position.Set(0, -275, 0);
         //print(optionsExit.rectTransform.position);

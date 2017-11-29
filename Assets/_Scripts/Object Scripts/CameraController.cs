@@ -13,12 +13,7 @@ public class CameraController : MonoBehaviour {
     private Vector3 offset;
 
     void Start() {
-        if (PlayerPrefs.GetFloat("cameraY") != 0) {
-            start.Set(transform.position.x, PlayerPrefs.GetFloat("cameraY"), PlayerPrefs.GetFloat("cameraZ"));
-        } else {
-            start.Set(transform.position.x, 17.0f, -7.0f);
-        }
-        
+        start.Set(transform.position.x, PlayerPrefs.GetFloat("cameraY"), PlayerPrefs.GetFloat("cameraZ"));
         transform.position = start;
         offset = transform.position - player.transform.position;
         shaking = false;

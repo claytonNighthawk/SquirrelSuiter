@@ -8,8 +8,10 @@ public class MobileController : MonoBehaviour {
     private float swipeDirection;
 
     public void Start() {
-        minSwipeDist = PlayerPrefs.GetFloat("swipeDist");
-        if (minSwipeDist == 0) {
+       
+        if (PlayerPrefs.HasKey("swipeDist")) {
+            minSwipeDist = PlayerPrefs.GetFloat("swipeDist");
+        } else {
             minSwipeDist = 5;
         }
     }

@@ -49,8 +49,10 @@ public class SquirrelController : MonoBehaviour {
 		windSound.Play();
 		Time.timeScale = 1;
 		boosting = false;
-        ctrlDirection = PlayerPrefs.GetInt("ctrlDirection");
-        if (ctrlDirection == 0) {
+        
+        if (PlayerPrefs.HasKey("ctrlDirection")) {
+            ctrlDirection = PlayerPrefs.GetInt("ctrlDirection");
+        } else {
             ctrlDirection = 1;
         }
 

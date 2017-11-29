@@ -57,7 +57,8 @@ public class MainMenu : MonoBehaviour {
         levelSelect.enabled = false;
         optionsMenu.enabled = false;
         mobileOptions.enabled = false;
-        if (PlayerPrefs.GetFloat("cameraY") == 0) {
+        if (!PlayerPrefs.HasKey("cameraY")) {
+            print("cameraY doesnt exist!");
             PlayerPrefs.SetFloat("cameraY", 17.0f);
             PlayerPrefs.SetFloat("cameraZ", -7.0f);
         }

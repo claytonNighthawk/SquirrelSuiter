@@ -331,6 +331,10 @@ Prefab:
       propertyPath: pm
       value: 
       objectReference: {fileID: 1751052217}
+    - target: {fileID: 1716280619191178, guid: e5a2a48042124a74f9c1fcc45eb2d113, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5a2a48042124a74f9c1fcc45eb2d113, type: 2}
   m_IsPrefabParent: 0
@@ -392,7 +396,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 1000
+  far clip plane: 2000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -624,6 +628,10 @@ Prefab:
       propertyPath: es
       value: 
       objectReference: {fileID: 341069278}
+    - target: {fileID: 1405859102498716, guid: 216f1272ce19ed441bfd06fb6cd612ee, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 216f1272ce19ed441bfd06fb6cd612ee, type: 2}
   m_IsPrefabParent: 0
@@ -836,6 +844,10 @@ Prefab:
         type: 2}
       propertyPath: levelNum
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933386676885490, guid: a588fb1c3be55e74f9d579f6fb171173, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a588fb1c3be55e74f9d579f6fb171173, type: 2}

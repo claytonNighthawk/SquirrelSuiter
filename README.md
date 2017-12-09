@@ -4,7 +4,7 @@ Squirrel Suiter is an endless “flyer” game where you play as a jetpack-equip
 
 •	Squirrel Suiter has multiple procedurally generated levels each with a different theme. 
 
-• All assents excepts for skyboxes and textures were made by the team.
+• All assets excepts for skyboxes and textures were made by the team.
 
 •	Personal contributions to original project include: physics, UI, level design.
 

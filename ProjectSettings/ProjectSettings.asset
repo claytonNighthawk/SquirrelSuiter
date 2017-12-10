@@ -213,8 +213,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 2800000, guid: 77755839d5b0a0e4792d65928fc79312, type: 3}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: C:/Users/Clayton IBP/Unity Apps/keystore.keystore
+  AndroidKeyaliasName: squirrelsuiterkey
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   androidEnableBanner: 1

@@ -812,8 +812,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrainWidth: 250
-  horizontalSpeed: 100
-  mobileSpeedAddition: 5
+  horizontalSpeed: 90
+  mobileSpeedAddition: 10
   forwardSpeed: 90
   tilt: 70
   acornCount: 0

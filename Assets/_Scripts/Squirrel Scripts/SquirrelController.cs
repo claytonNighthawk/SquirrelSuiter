@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class SquirrelController : MonoBehaviour {
 
-	public float terrainWidth;
-	public float horizontalSpeed = 10.0f;
-    public float mobileSpeedAddition = 10.0f;
+	public float terrainWidth = 250;
+	public float directionalSpeed = 90.0f;
 	public float forwardSpeed = 90;
-	public float tilt;
-	public int acornCount = 0;
+    public float mobileSpeedAddition = 10.0f;
+    public float tilt = 70.0f;
+
+    [HideInInspector]
+    public int acornCount = 0;
+    [HideInInspector]
     public int boostsAvailable = 0;
-    private int ctrlDirection = 1;
-    private int scoreThreshold = 2000;
 
     public PlayerManager playerManager;
 	public ScoreText scoreScript;
@@ -24,6 +25,8 @@ public class SquirrelController : MonoBehaviour {
 	public AudioSource soundSource;
     public GameObject soundBarrier;
 
+    private int ctrlDirection = 1;
+    private int scoreThreshold = 2000;
     private bool rolling = false;
     private bool boosting = false;
     private float mobileSpeedBoost = 0.0f;
@@ -31,14 +34,15 @@ public class SquirrelController : MonoBehaviour {
 	private float currentX;
 	private float boostStart;
 	private float lastscore;
+
     private Vector3 pos;
     private Vector3 movement;
-
     private Quaternion calibrationQuaternion;
     private Rigidbody rb;
 	private ParticleSystem acornParticles;
 	private Vector3 soundBarStart, soundBarEnd;
 	private Light engineLight;
+
 
 
 	void Start() {
@@ -71,7 +75,7 @@ public class SquirrelController : MonoBehaviour {
         int direction;
 		if (scoreScript.scoreNum > lastscore + scoreThreshold) {
 		    forwardSpeed += 5;
-            horizontalSpeed += 1;
+            directionalSpeed += 1;
             lastscore = scoreScript.scoreNum;
 		}
 
@@ -109,7 +113,7 @@ public class SquirrelController : MonoBehaviour {
 		}
 
 		movement.Set(moveHorizontal, moveVertical, forwardSpeed * Time.deltaTime);
-		rb.velocity = (mobileSpeedBoost + horizontalSpeed) * movement;
+		rb.velocity = (mobileSpeedBoost + directionalSpeed) * movement;
 
 		if (Mathf.Abs(transform.position.x - 250) > terrainWidth) {
 			Collision other = new Collision();

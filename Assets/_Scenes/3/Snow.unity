@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08841569, g: 0.28307486, b: 0.48466122, a: 1}
+  m_IndirectSpecularColor: {r: 0.09241433, g: 0.2827225, b: 0.48257977, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -676,24 +676,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114637582408726120, guid: 4af8e9e6051bf3a4c8032cec5e88451a,
-        type: 2}
-      propertyPath: forwardSpeed
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 114637582408726120, guid: 4af8e9e6051bf3a4c8032cec5e88451a,
-        type: 2}
-      propertyPath: horizontalSpeed
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 4525348441554880, guid: 4af8e9e6051bf3a4c8032cec5e88451a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 70.98
-      objectReference: {fileID: 0}
-    - target: {fileID: 114637582408726120, guid: 4af8e9e6051bf3a4c8032cec5e88451a,
-        type: 2}
-      propertyPath: tilt
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 114637582408726120, guid: 4af8e9e6051bf3a4c8032cec5e88451a,
         type: 2}

@@ -228,7 +228,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 77755839d5b0a0e4792d65928fc79312, type: 3}
+      m_Icon: {fileID: 2800000, guid: 643791d994537e7448b2e8d87bbf4b40, type: 3}
       m_Width: 128
       m_Height: 128
   m_BuildTargetBatching: []
@@ -502,7 +502,7 @@ PlayerSettings:
   webGLUseWasm: 0
   webGLCompressionFormat: 1
   scriptingDefineSymbols:
-    1: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    1: 
     4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
     7: CROSS_PLATFORM_INPUT;MOBILE_INPUT
     13: MOBILE_INPUT

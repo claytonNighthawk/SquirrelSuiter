@@ -5,12 +5,13 @@ using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour {
 
-    public Canvas exitMenu;
     public Canvas levelSelect;
     public Canvas optionsMenu;
     public Canvas mobileOptions;
     public Canvas tutorial1;
     public Canvas tutorial2;
+    public Canvas credits;
+    public Canvas exitMenu;
 
     public Button[] mainMenuButtons;
     public Button level1;
@@ -30,6 +31,8 @@ public class MainMenu : MonoBehaviour {
     public Button tutorial1Exit;
     public Button tutorial2Exit;
     public Button tutorial1Next;
+
+    public Button creditsExit;
 
     public Button exitYes;
     public Button exitNo;
@@ -57,6 +60,7 @@ public class MainMenu : MonoBehaviour {
         levelSelect.enabled = false;
         optionsMenu.enabled = false;
         mobileOptions.enabled = false;
+        credits.enabled = false;
         if (!PlayerPrefs.HasKey("cameraY")) {
             print("cameraY doesnt exist!");
             PlayerPrefs.SetFloat("cameraY", 17.0f);
@@ -201,6 +205,20 @@ public class MainMenu : MonoBehaviour {
         if (controllerName != "") {
             mainMenuButtons[2].Select();
         }
+    }
+
+    public void CreditsPress() {
+        credits.enabled = true;
+        DisableMainMenuButtons();
+        currentBlankButton = 6;
+        es.SetSelectedGameObject(null);
+    }
+
+    public void CreditsExit() {
+        credits.enabled = false;
+        EnableableMainMenuButtons();
+        currentBlankButton = 0;
+        es.SetSelectedGameObject(null);
     }
 
     public void PracticePress() {

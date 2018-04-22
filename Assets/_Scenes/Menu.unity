@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 83289507}
   m_Layer: 5
   m_Name: Tutorial
-  m_TagString: Untagged
+  m_TagString: TutorialMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -369,16 +369,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: TutorialPress
-        m_Mode: 1
+      - m_Target: {fileID: 197653692}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -652,8 +652,8 @@ RectTransform:
   - {fileID: 516509530}
   - {fileID: 982047667}
   - {fileID: 255800222}
-  m_Father: {fileID: 266840373}
-  m_RootOrder: 5
+  m_Father: {fileID: 658774512}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -883,8 +883,9 @@ GameObject:
   - component: {fileID: 168399412}
   - component: {fileID: 168399411}
   - component: {fileID: 168399410}
+  - component: {fileID: 168399414}
   m_Layer: 5
-  m_Name: MobileOptions
+  m_Name: MobileOptionsMenu
   m_TagString: MobileOptionsMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -974,6 +975,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &168399414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 168399409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5416d256b3601934b9516ed86195e78c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &168763678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,8 +1063,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LevelLoad
+      - m_Target: {fileID: 212967441}
+        m_MethodName: SelectLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1208,8 +1220,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LevelLoad
+      - m_Target: {fileID: 212967441}
+        m_MethodName: SelectLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1299,6 +1311,7 @@ GameObject:
   - component: {fileID: 197653690}
   - component: {fileID: 197653689}
   - component: {fileID: 197653688}
+  - component: {fileID: 197653692}
   m_Layer: 5
   m_Name: StartMenu
   m_TagString: StartMenu
@@ -1389,6 +1402,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &197653692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197653687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6493e81c31cec2f4cbd887ac6546de07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &203762220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,8 +1490,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: TutorialNext
+      - m_Target: {fileID: 658774513}
+        m_MethodName: Next
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1558,8 +1582,9 @@ GameObject:
   - component: {fileID: 212967437}
   - component: {fileID: 212967436}
   - component: {fileID: 212967440}
+  - component: {fileID: 212967441}
   m_Layer: 5
-  m_Name: LevelSelectMenu
+  m_Name: LevelSelect
   m_TagString: LevelSelect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1645,8 +1670,8 @@ RectTransform:
   - {fileID: 1785320498}
   - {fileID: 1458345941}
   - {fileID: 2129176751}
-  - {fileID: 1853038437}
   - {fileID: 418099394}
+  - {fileID: 1853038437}
   - {fileID: 1495797695}
   m_Father: {fileID: 266840373}
   m_RootOrder: 1
@@ -1673,6 +1698,17 @@ MonoBehaviour:
   highScore3: {fileID: 1785320499}
   highScore4: {fileID: 1458345942}
   highScore5: {fileID: 2129176752}
+--- !u!114 &212967441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 212967435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce5fb2bfc8fea9d41921c3c625a1d78e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &226407802
 GameObject:
   m_ObjectHideFlags: 0
@@ -2077,13 +2113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c5e19e95391274a8d2254d75acb620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMenu: {fileID: 0}
-  levelSelectMenu: {fileID: 0}
-  optionsMenu: {fileID: 0}
-  mobileOptionsMenu: {fileID: 0}
-  tutorialMenu: {fileID: 0}
-  creditsMenu: {fileID: 0}
-  exitMenu: {fileID: 0}
 --- !u!4 &266840373
 Transform:
   m_ObjectHideFlags: 0
@@ -2098,8 +2127,7 @@ Transform:
   - {fileID: 212967439}
   - {fileID: 297203025}
   - {fileID: 168399413}
-  - {fileID: 2094103342}
-  - {fileID: 103012722}
+  - {fileID: 658774512}
   - {fileID: 323238234}
   - {fileID: 1673505992}
   m_Father: {fileID: 0}
@@ -2116,8 +2144,9 @@ GameObject:
   - component: {fileID: 297203024}
   - component: {fileID: 297203023}
   - component: {fileID: 297203022}
+  - component: {fileID: 297203026}
   m_Layer: 5
-  m_Name: Options
+  m_Name: OptionsMenu
   m_TagString: OptionsMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2207,6 +2236,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &297203026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 297203021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3398ed5bcf3b9be4c9eac3943b852e29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &313710065
 GameObject:
   m_ObjectHideFlags: 0
@@ -2222,7 +2262,7 @@ GameObject:
   - component: {fileID: 313710071}
   m_Layer: 5
   m_Name: Play
-  m_TagString: Untagged
+  m_TagString: LevelSelect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2351,16 +2391,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 266840371}
-        m_MethodName: 
-        m_Mode: 5
+      - m_Target: {fileID: 197653692}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -2375,8 +2415,9 @@ GameObject:
   - component: {fileID: 323238233}
   - component: {fileID: 323238232}
   - component: {fileID: 323238231}
+  - component: {fileID: 323238235}
   m_Layer: 5
-  m_Name: Credits
+  m_Name: CreditsMenu
   m_TagString: CreditsMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2455,13 +2496,24 @@ RectTransform:
   - {fileID: 1035597395}
   - {fileID: 893254910}
   m_Father: {fileID: 266840373}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &323238235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 323238230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41019d200cb6d549befd3078784fefa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &411697017
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,9 +2600,9 @@ GameObject:
   - component: {fileID: 418099394}
   - component: {fileID: 418099399}
   - component: {fileID: 418099398}
-  - component: {fileID: 418099397}
   - component: {fileID: 418099396}
   - component: {fileID: 418099395}
+  - component: {fileID: 418099397}
   m_Layer: 5
   m_Name: Reset Highscores
   m_TagString: Untagged
@@ -2569,7 +2621,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 212967439}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2710,7 +2762,7 @@ GameObject:
   - component: {fileID: 436006010}
   m_Layer: 5
   m_Name: MobileOptions
-  m_TagString: Untagged
+  m_TagString: MobileOptionsMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2754,16 +2806,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OptionsMobileMenu
-        m_Mode: 1
+      - m_Target: {fileID: 297203026}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -3216,6 +3268,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 553540486}
+--- !u!1 &658774511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 658774512}
+  - component: {fileID: 658774513}
+  m_Layer: 0
+  m_Name: TutorialMenu
+  m_TagString: TutorialMenu
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &658774512
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 658774511}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2094103342}
+  - {fileID: 103012722}
+  m_Father: {fileID: 266840373}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &658774513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 658774511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68193c8966b573149bced8fd9238ce1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &693526471
 GameObject:
   m_ObjectHideFlags: 0
@@ -3409,13 +3503,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 266840372}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 168399414}
+        m_MethodName: SetSwipeDist
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3566,7 +3660,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 168399414}
         m_MethodName: CalibrateRotation
         m_Mode: 1
         m_Arguments:
@@ -3839,13 +3933,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetLargeSwipeDist
-        m_Mode: 1
+      - m_Target: {fileID: 168399414}
+        m_MethodName: SetSwipeDist
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4019,7 +4113,7 @@ GameObject:
   - component: {fileID: 887122265}
   m_Layer: 5
   m_Name: Exit
-  m_TagString: Untagged
+  m_TagString: ExitMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4081,16 +4175,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ExitPress
-        m_Mode: 1
+      - m_Target: {fileID: 197653692}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -4220,13 +4314,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetNormalControlls
-        m_Mode: 1
+      - m_Target: {fileID: 297203026}
+        m_MethodName: SetControlType
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4690,9 +4784,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: TutorialExit
-        m_Mode: 1
+      - m_Target: {fileID: 658774513}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4829,9 +4923,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetThirdPersonCamera
-        m_Mode: 1
+      - m_Target: {fileID: 297203026}
+        m_MethodName: SetCameraStyle
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5006,9 +5100,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: TutorialExit
-        m_Mode: 1
+      - m_Target: {fileID: 658774513}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5163,9 +5257,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: CreditsExit
-        m_Mode: 1
+      - m_Target: {fileID: 323238235}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5409,8 +5503,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LevelLoad
+      - m_Target: {fileID: 212967441}
+        m_MethodName: SelectLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5853,7 +5947,7 @@ GameObject:
   - component: {fileID: 1212318973}
   m_Layer: 5
   m_Name: Credits
-  m_TagString: Untagged
+  m_TagString: CreditsMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5982,16 +6076,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: CreditsPress
-        m_Mode: 1
+      - m_Target: {fileID: 197653692}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -6054,8 +6148,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LevelLoad
+      - m_Target: {fileID: 212967441}
+        m_MethodName: SelectLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6229,9 +6323,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ExitNoPress
-        m_Mode: 1
+      - m_Target: {fileID: 1673505993}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6676,8 +6770,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LevelLoad
+      - m_Target: {fileID: 212967441}
+        m_MethodName: SelectLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6685,7 +6779,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -6951,9 +7045,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OptionsExit
-        m_Mode: 1
+      - m_Target: {fileID: 297203026}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7126,13 +7220,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetInvertedControls
-        m_Mode: 1
+      - m_Target: {fileID: 297203026}
+        m_MethodName: SetControlType
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7219,6 +7313,7 @@ GameObject:
   - component: {fileID: 1673505991}
   - component: {fileID: 1673505990}
   - component: {fileID: 1673505989}
+  - component: {fileID: 1673505993}
   m_Layer: 5
   m_Name: ExitMenu
   m_TagString: ExitMenu
@@ -7299,13 +7394,24 @@ RectTransform:
   - {fileID: 1290528656}
   - {fileID: 483283655}
   m_Father: {fileID: 266840373}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1673505993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1673505988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9bd40f49a574b4186ceb56e6a5d667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1702476372
 GameObject:
   m_ObjectHideFlags: 0
@@ -7425,7 +7531,7 @@ GameObject:
   - component: {fileID: 1725644496}
   m_Layer: 5
   m_Name: Options
-  m_TagString: Untagged
+  m_TagString: OptionsMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7487,16 +7593,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OptionsPress
-        m_Mode: 1
+      - m_Target: {fileID: 197653692}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -7806,7 +7912,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 212967439}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7852,9 +7958,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ExitLevelSelect
-        m_Mode: 1
+      - m_Target: {fileID: 212967441}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8099,16 +8205,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetFollowCamera
-        m_Mode: 1
+      - m_Target: {fileID: 297203026}
+        m_MethodName: SetCameraStyle
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -8276,9 +8382,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OptionsExit
-        m_Mode: 1
+      - m_Target: {fileID: 168399414}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8832,8 +8938,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LevelLoad
+      - m_Target: {fileID: 212967441}
+        m_MethodName: SelectLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9003,8 +9109,8 @@ RectTransform:
   - {fileID: 203762221}
   - {fileID: 939611012}
   - {fileID: 853149608}
-  m_Father: {fileID: 266840373}
-  m_RootOrder: 4
+  m_Father: {fileID: 658774512}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9338,8 +9444,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ExitYesPress
+      - m_Target: {fileID: 1673505993}
+        m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -16,7 +16,7 @@ public class MobileController : MonoBehaviour {
         }
     }
 
-	void FixedUpdate() {
+    void FixedUpdate() {
         if (Input.touchCount > 0) {
             Touch touch = Input.touches[0];
 

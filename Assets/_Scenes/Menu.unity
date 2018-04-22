@@ -369,7 +369,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: TutorialPress
         m_Mode: 1
         m_Arguments:
@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 103012719}
   m_Layer: 5
   m_Name: Tutorial 2
-  m_TagString: Untagged
+  m_TagString: TutorialMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -652,8 +652,8 @@ RectTransform:
   - {fileID: 516509530}
   - {fileID: 982047667}
   - {fileID: 255800222}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 266840373}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -885,7 +885,7 @@ GameObject:
   - component: {fileID: 168399410}
   m_Layer: 5
   m_Name: MobileOptions
-  m_TagString: Untagged
+  m_TagString: MobileOptionsMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -966,8 +966,8 @@ RectTransform:
   - {fileID: 710388733}
   - {fileID: 1962603599}
   - {fileID: 228997472}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 266840373}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -989,7 +989,7 @@ GameObject:
   - component: {fileID: 168763680}
   m_Layer: 5
   m_Name: Level 2
-  m_TagString: Untagged
+  m_TagString: Desert
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1051,8 +1051,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
-        m_MethodName: Level2Press
+      - m_Target: {fileID: 0}
+        m_MethodName: LevelLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1146,7 +1146,7 @@ GameObject:
   - component: {fileID: 188705164}
   m_Layer: 5
   m_Name: Level 3
-  m_TagString: Untagged
+  m_TagString: Snow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1208,8 +1208,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
-        m_MethodName: Level3Press
+      - m_Target: {fileID: 0}
+        m_MethodName: LevelLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1299,10 +1299,9 @@ GameObject:
   - component: {fileID: 197653690}
   - component: {fileID: 197653689}
   - component: {fileID: 197653688}
-  - component: {fileID: 197653692}
   m_Layer: 5
   m_Name: StartMenu
-  m_TagString: Untagged
+  m_TagString: StartMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1382,68 +1381,14 @@ RectTransform:
   - {fileID: 1212318968}
   - {fileID: 887122264}
   - {fileID: 693526475}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 266840373}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &197653692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 197653687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74c5e19e95391274a8d2254d75acb620, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelSelect: {fileID: 212967438}
-  optionsMenu: {fileID: 297203024}
-  mobileOptions: {fileID: 168399412}
-  tutorial1: {fileID: 2094103341}
-  tutorial2: {fileID: 103012721}
-  credits: {fileID: 323238233}
-  exitMenu: {fileID: 1673505991}
-  mainMenuButtons:
-  - {fileID: 313710071}
-  - {fileID: 1517500322}
-  - {fileID: 1725644496}
-  - {fileID: 83289507}
-  - {fileID: 887122265}
-  - {fileID: 1212318973}
-  level1: {fileID: 2087814918}
-  level2: {fileID: 168763680}
-  level3: {fileID: 188705164}
-  level4: {fileID: 1130090328}
-  level5: {fileID: 1287001366}
-  levelSelectExit: {fileID: 1853038438}
-  optionsSetInverted: {fileID: 1648087182}
-  optionsMobileMenu: {fileID: 436006010}
-  optionsExit: {fileID: 1643090901}
-  rotationText: {fileID: 1177763346}
-  tutorial1Body: {fileID: 1165606081}
-  tutorial2Body: {fileID: 104406345}
-  tutorial1Exit: {fileID: 939611013}
-  tutorial2Exit: {fileID: 982047668}
-  tutorial1Next: {fileID: 203762222}
-  creditsExit: {fileID: 0}
-  exitYes: {fileID: 2141583803}
-  exitNo: {fileID: 1290528657}
-  es: {fileID: 911132812}
-  placeholderButtons:
-  - {fileID: 693526472}
-  - {fileID: 483283656}
-  - {fileID: 853149605}
-  - {fileID: 255800219}
-  - {fileID: 1495797696}
-  - {fileID: 55994006}
-  - {fileID: 893254911}
-  smallSwipeDist: 5
-  largeSwipeDist: 10
 --- !u!1 &203762220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1521,7 +1466,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: TutorialNext
         m_Mode: 1
         m_Arguments:
@@ -1615,7 +1560,7 @@ GameObject:
   - component: {fileID: 212967440}
   m_Layer: 5
   m_Name: LevelSelectMenu
-  m_TagString: Untagged
+  m_TagString: LevelSelect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1703,8 +1648,8 @@ RectTransform:
   - {fileID: 1853038437}
   - {fileID: 418099394}
   - {fileID: 1495797695}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 266840373}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1909,7 +1854,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: OptionsPress
         m_Mode: 1
         m_Arguments:
@@ -2105,6 +2050,61 @@ RectTransform:
   m_AnchoredPosition: {x: -552, y: 10}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &266840371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 266840373}
+  - component: {fileID: 266840372}
+  m_Layer: 0
+  m_Name: Menus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &266840372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 266840371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c5e19e95391274a8d2254d75acb620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMenu: {fileID: 0}
+  levelSelectMenu: {fileID: 0}
+  optionsMenu: {fileID: 0}
+  mobileOptionsMenu: {fileID: 0}
+  tutorialMenu: {fileID: 0}
+  creditsMenu: {fileID: 0}
+  exitMenu: {fileID: 0}
+--- !u!4 &266840373
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 266840371}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 197653691}
+  - {fileID: 212967439}
+  - {fileID: 297203025}
+  - {fileID: 168399413}
+  - {fileID: 2094103342}
+  - {fileID: 103012722}
+  - {fileID: 323238234}
+  - {fileID: 1673505992}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &297203021
 GameObject:
   m_ObjectHideFlags: 0
@@ -2118,7 +2118,7 @@ GameObject:
   - component: {fileID: 297203022}
   m_Layer: 5
   m_Name: Options
-  m_TagString: Untagged
+  m_TagString: OptionsMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2199,8 +2199,8 @@ RectTransform:
   - {fileID: 436006015}
   - {fileID: 1643090905}
   - {fileID: 55994005}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 266840373}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2351,9 +2351,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
-        m_MethodName: PlayPress
-        m_Mode: 1
+      - m_Target: {fileID: 266840371}
+        m_MethodName: 
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2377,7 +2377,7 @@ GameObject:
   - component: {fileID: 323238231}
   m_Layer: 5
   m_Name: Credits
-  m_TagString: Untagged
+  m_TagString: CreditsMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2454,8 +2454,8 @@ RectTransform:
   - {fileID: 2055117345}
   - {fileID: 1035597395}
   - {fileID: 893254910}
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 266840373}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2754,7 +2754,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: OptionsMobileMenu
         m_Mode: 1
         m_Arguments:
@@ -3409,8 +3409,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
-        m_MethodName: SetLargeSwipeDist
+      - m_Target: {fileID: 266840372}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3566,7 +3566,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: CalibrateRotation
         m_Mode: 1
         m_Arguments:
@@ -3839,7 +3839,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: SetLargeSwipeDist
         m_Mode: 1
         m_Arguments:
@@ -4081,7 +4081,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: ExitPress
         m_Mode: 1
         m_Arguments:
@@ -4220,7 +4220,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: SetNormalControlls
         m_Mode: 1
         m_Arguments:
@@ -4690,7 +4690,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: TutorialExit
         m_Mode: 1
         m_Arguments:
@@ -4829,7 +4829,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: SetThirdPersonCamera
         m_Mode: 1
         m_Arguments:
@@ -5006,7 +5006,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: TutorialExit
         m_Mode: 1
         m_Arguments:
@@ -5163,7 +5163,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: CreditsExit
         m_Mode: 1
         m_Arguments:
@@ -5347,7 +5347,7 @@ GameObject:
   - component: {fileID: 1130090328}
   m_Layer: 5
   m_Name: Level 4
-  m_TagString: Untagged
+  m_TagString: Space
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5409,8 +5409,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
-        m_MethodName: Level4Press
+      - m_Target: {fileID: 0}
+        m_MethodName: LevelLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5622,7 +5622,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Avoid obstacles.\n\nCollect acorns and stay alive to score points.  \n\nUse
-    the WASD or Arrow keys to move. \n\nIf you would like inverted controls or a closer
+    WASD or Arrow keys to move. \n\nIf you would like inverted controls or a closer
     camera you can turn them on in the Options menu. "
 --- !u!222 &1165606082
 CanvasRenderer:
@@ -5643,7 +5643,7 @@ GameObject:
   - component: {fileID: 1177763345}
   - component: {fileID: 1177763344}
   m_Layer: 5
-  m_Name: Rotation
+  m_Name: RotationText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5982,7 +5982,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: CreditsPress
         m_Mode: 1
         m_Arguments:
@@ -6010,7 +6010,7 @@ GameObject:
   - component: {fileID: 1287001366}
   m_Layer: 5
   m_Name: Level 5
-  m_TagString: Untagged
+  m_TagString: City
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6054,8 +6054,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
-        m_MethodName: Level5Press
+      - m_Target: {fileID: 0}
+        m_MethodName: LevelLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6229,7 +6229,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: ExitNoPress
         m_Mode: 1
         m_Arguments:
@@ -6614,7 +6614,7 @@ GameObject:
   - component: {fileID: 1517500322}
   m_Layer: 5
   m_Name: Practice
-  m_TagString: Untagged
+  m_TagString: Practice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6676,8 +6676,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
-        m_MethodName: PracticePress
+      - m_Target: {fileID: 0}
+        m_MethodName: LevelLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6951,7 +6951,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: OptionsExit
         m_Mode: 1
         m_Arguments:
@@ -7126,7 +7126,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: SetInvertedControls
         m_Mode: 1
         m_Arguments:
@@ -7221,7 +7221,7 @@ GameObject:
   - component: {fileID: 1673505989}
   m_Layer: 5
   m_Name: ExitMenu
-  m_TagString: Untagged
+  m_TagString: ExitMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7298,8 +7298,8 @@ RectTransform:
   - {fileID: 2141583802}
   - {fileID: 1290528656}
   - {fileID: 483283655}
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 266840373}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7487,7 +7487,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: OptionsPress
         m_Mode: 1
         m_Arguments:
@@ -7852,7 +7852,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: ExitLevelSelect
         m_Mode: 1
         m_Arguments:
@@ -8099,7 +8099,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: SetFollowCamera
         m_Mode: 1
         m_Arguments:
@@ -8276,7 +8276,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: OptionsExit
         m_Mode: 1
         m_Arguments:
@@ -8770,7 +8770,7 @@ GameObject:
   - component: {fileID: 2087814918}
   m_Layer: 5
   m_Name: Level 1
-  m_TagString: Untagged
+  m_TagString: Forest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8832,8 +8832,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
-        m_MethodName: Level1Press
+      - m_Target: {fileID: 0}
+        m_MethodName: LevelLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8925,7 +8925,7 @@ GameObject:
   - component: {fileID: 2094103339}
   m_Layer: 5
   m_Name: Tutorial 1
-  m_TagString: Untagged
+  m_TagString: TutorialMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9003,8 +9003,8 @@ RectTransform:
   - {fileID: 203762221}
   - {fileID: 939611012}
   - {fileID: 853149608}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 266840373}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9338,7 +9338,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197653692}
+      - m_Target: {fileID: 0}
         m_MethodName: ExitYesPress
         m_Mode: 1
         m_Arguments:

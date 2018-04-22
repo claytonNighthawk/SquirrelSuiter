@@ -13,6 +13,19 @@ TagManager:
   - WindSound
   - Boost
   - SoundBarrier
+  - StartMenu
+  - LevelSelect
+  - OptionsMenu
+  - MobileOptionsMenu
+  - TutorialMenu
+  - CreditsMenu
+  - ExitMenu
+  - Forest
+  - Desert
+  - Snow
+  - Space
+  - City
+  - Practice
   layers:
   - Default
   - TransparentFX

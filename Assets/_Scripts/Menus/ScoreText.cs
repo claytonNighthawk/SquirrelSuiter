@@ -6,7 +6,7 @@ public class ScoreText : MonoBehaviour {
     public Text score;
     public Text acorns;
     public Text highScore;
-	public Text boosts;
+    public Text boosts;
 
     [HideInInspector]
     public int scoreNum, acornNum, boostNum;
@@ -35,7 +35,7 @@ public class ScoreText : MonoBehaviour {
         scoreNum++;
         acorns.text = "Acorns: " + acornNum.ToString();
         score.text = "Score: " + scoreNum.ToString();
-		boosts.text = "Boosts: " + boostNum.ToString ();
+        boosts.text = "Boosts: " + boostNum.ToString ();
         
         if (scoreNum > prevHigh) {
             PlayerPrefs.SetInt(highScoreOnLevel, scoreNum);
@@ -45,15 +45,15 @@ public class ScoreText : MonoBehaviour {
 
     public void IncAcorns() {
         acornNum++;
-		scoreNum += 1000;
+        scoreNum += 1000;
     }
 
-	public void IncBoosts(){
-		boostNum++;
-	}
+    public void IncBoosts(){
+        boostNum++;
+    }
 
-	public void DecBoosts(){
-		boostNum--;
-	}
+    public void DecBoosts(){
+        boostNum--;
+    }
 
 }

@@ -926,22 +926,16 @@ MonoBehaviour:
   forwardSpeed: 90
   mobileSpeedAddition: 10
   tilt: 70
-  acornCount: 0
-  boostsAvailable: 0
-  playerManager: {fileID: 0}
-  scoreScript: {fileID: 0}
   playerExplosion: {fileID: 1906365810839710, guid: d7fa044f86eafd540b47529b259fd75a,
     type: 2}
-  engineSound: {fileID: 82903290591019844}
-  windSound: {fileID: 82370713983267300}
-  crunch1: {fileID: 8300000, guid: 3a80b037f958c4da4a6a47f0a175900c, type: 3}
-  crunch2: {fileID: 8300000, guid: 53146a89e7cd04fde9907387bd21a301, type: 3}
-  crunch3: {fileID: 8300000, guid: 2dcc7ad77cce24d87be827a06bd23eb4, type: 3}
+  soundBarrier: {fileID: 1172674370528568}
+  crunchSounds:
+  - {fileID: 8300000, guid: 3a80b037f958c4da4a6a47f0a175900c, type: 3}
+  - {fileID: 8300000, guid: 53146a89e7cd04fde9907387bd21a301, type: 3}
+  - {fileID: 8300000, guid: 2dcc7ad77cce24d87be827a06bd23eb4, type: 3}
   boost: {fileID: 8300000, guid: 6461a9ecf40f24604ae89d062e379dc6, type: 3}
   boostPickup: {fileID: 8300000, guid: 95fc82360a7124d4997dc545bfa9f9b4, type: 3}
   barrelRollSound: {fileID: 8300000, guid: a8e9415741dc74ca9b0d1cc0da0cdb5d, type: 3}
-  soundSource: {fileID: 82070773583520766}
-  soundBarrier: {fileID: 1172674370528568}
 --- !u!114 &114672744339492312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -953,8 +947,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1a28256a5d90a4dab9cadb235a2f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sqc: {fileID: 114637582408726120}
-  pm: {fileID: 0}
 --- !u!136 &136842754499364552
 CapsuleCollider:
   m_ObjectHideFlags: 1

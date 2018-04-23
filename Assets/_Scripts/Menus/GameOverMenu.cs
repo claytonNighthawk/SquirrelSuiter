@@ -13,7 +13,7 @@ public class GameOverMenu : MonoBehaviour {
     private Text acornNum;
     private Text scoreNum;
     private Text newHighScore;
-    private ScoreText scoreScript;
+    private Score scoreScript;
 
     void Start() {
         buttons = GetComponentsInChildren<Button>();
@@ -22,11 +22,10 @@ public class GameOverMenu : MonoBehaviour {
         scoreNum = transform.Find("Score").GetComponent<Text>();
         acornNum = transform.Find("Acorns").GetComponent<Text>();
         newHighScore = transform.Find("New High Score").GetComponent<Text>();
-        scoreScript = GameObject.Find("ScoreCanvas").GetComponent<ScoreText>();
+        scoreScript = GameObject.Find("ScoreCanvas").GetComponent<Score>();
     }
 
     public void PlayerDead() {
-        scoreScript.playerDead = true;
     #if !MOBILE_INPUT
         restartButton.Select();
     #endif

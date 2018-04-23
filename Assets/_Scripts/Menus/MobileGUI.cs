@@ -19,6 +19,6 @@ public class MobileGUI : MonoBehaviour {
     }
 
     public void PauseGame() {
-        pm.ActivatePauseMenu();
+        pm.SetPauseMenuState();
     }
 }

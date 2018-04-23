@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour {
     public AudioClip musicLoop, pauseLoop, explosionSound;
+    public bool playerDead { get; set; }
 
     private GameObject gameOverMenu;
     private GameObject pauseMenu;
@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour {
     private AudioSource[] atmosphere;
     private float musicTime;
 
-    void Start () {
+    void Awake () {
         pauseMenu = GameObject.Find("/Pause Menu");
         camControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
         gameOverMenu = GameObject.Find("/GameOver Menu");
@@ -22,15 +22,16 @@ public class PlayerManager : MonoBehaviour {
         atmosphere = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<AudioSource>();
         music.clip = musicLoop;
         gameOverMenu.GetComponent<Canvas>().enabled = false;
+        playerDead = false;
     }
 
     void Update() {
         if (Input.GetButtonDown("Cancel")) {
-                ActivatePauseMenu();
+                SetPauseMenuState();
         }
     }
 
-    public void ActivatePauseMenu() {
+    public void SetPauseMenuState() {
         if (!gameOverMenu.GetComponent<Canvas>().enabled) {
             if (pauseMenu.GetComponent<Canvas>().enabled) {
                 pauseMenu.GetComponent<Canvas>().enabled = false;
@@ -59,6 +60,7 @@ public class PlayerManager : MonoBehaviour {
         music.time = musicTime;
         music.Play();
 
+        playerDead = true;
         camControl.Shake();
         GetComponents<AudioSource>()[1].Play();
         gameOverMenu.GetComponent<Canvas>().enabled = true;

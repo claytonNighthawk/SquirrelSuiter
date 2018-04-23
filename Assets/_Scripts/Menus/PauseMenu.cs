@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class PauseMenu : MonoBehaviour {
 
     private Button[] buttons;
-    public bool active = false;
+    private bool active = false;
 
     void Start() {
         buttons = GetComponentsInChildren<Button>();
@@ -32,13 +32,15 @@ public class PauseMenu : MonoBehaviour {
 
     public void Deactivate() {
         active = false;
-        buttons[2].Select();
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void RestartOrMenuPress(bool restart) {
         if (restart) {
+            Time.timeScale = 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         } else {
+            Time.timeScale = 1;
             SceneManager.LoadScene("Menu");
         }
     }

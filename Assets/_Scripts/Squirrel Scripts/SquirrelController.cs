@@ -10,27 +10,19 @@ public class SquirrelController : MonoBehaviour {
     public float mobileSpeedAddition = 10.0f;
     public float tilt = 70.0f;
 
-    [HideInInspector]
-    public int acornCount = 0;
-    [HideInInspector]
-    public int boostsAvailable = 0;
-
     public GameObject playerExplosion;
-    public AudioClip crunch1, crunch2, crunch3, boost, boostPickup, barrelRollSound;
-
     public GameObject soundBarrier;
-
+    public AudioClip[] crunchSounds;
+    public AudioClip boost, boostPickup, barrelRollSound;
+    
     private int ctrlDirection = 1;
-    private int scoreThreshold = 2000;
     private bool rolling = false;
     private bool boosting = false;
     private float mobileSpeedBoost = 0.0f;
-    private float currentX;
-    private float boostStart;
     private float lastscore;
 
     private PlayerManager playerManager;
-    private ScoreText scoreScript;
+    private Score score;
 
     private AudioSource engineSound;
     private AudioSource windSound;
@@ -51,26 +43,24 @@ public class SquirrelController : MonoBehaviour {
         soundSource = audioSources[2];
 
         playerManager = GameObject.Find("Player Manager").GetComponent<PlayerManager>();
-        scoreScript = GameObject.Find("ScoreCanvas").GetComponent<ScoreText>();
-
-        lastscore = scoreScript.scoreNum;
+        score = GameObject.Find("ScoreCanvas").GetComponent<Score>();
         rb = GetComponent<Rigidbody>();
         acornParticles = GetComponent<ParticleSystem>();
+
         engineSound.Play();
         windSound.Play();
-        Time.timeScale = 1;
         boosting = false;
-        
+        lastscore = score.scoreNum;
+
         if (PlayerPrefs.HasKey("ctrlDirection")) {
             ctrlDirection = PlayerPrefs.GetInt("ctrlDirection");
-        } else {
-            ctrlDirection = 1;
-        }
+        } 
 
         soundBarStart = new Vector3 (0, 0.025f, 0);
         soundBarEnd = new Vector3 (1000.0f, 0.025f, 1000.0f);
         soundBarrier.transform.localScale = soundBarStart;
-        engineLight = soundBarrier.GetComponent<Light> ();
+        engineLight = soundBarrier.GetComponent<Light>();
+
     #if MOBILE_INPUT
         calibrationQuaternion.Set(PlayerPrefs.GetFloat("calibrationX"), PlayerPrefs.GetFloat("calibrationY"), PlayerPrefs.GetFloat("calibrationZ"), PlayerPrefs.GetFloat("calibrationW"));
         mobileSpeedBoost = mobileSpeedAddition;
@@ -79,14 +69,14 @@ public class SquirrelController : MonoBehaviour {
 
     void FixedUpdate() {
         int direction;
-        if (scoreScript.scoreNum > lastscore + scoreThreshold) {
-            forwardSpeed += 5;
-            directionalSpeed += 1;
-            lastscore = scoreScript.scoreNum;
-        }
-
         float moveHorizontal;
         float moveVertical;
+
+        if (score.scoreNum > lastscore + score.scoreThreshold) {
+            forwardSpeed += 5;
+            directionalSpeed += 1;
+            lastscore = score.scoreNum;
+        }
 
     #if MOBILE_INPUT
         Vector3 acceleration = calibrationQuaternion * Input.acceleration;
@@ -96,6 +86,7 @@ public class SquirrelController : MonoBehaviour {
         moveHorizontal = Input.GetAxis("Horizontal");
         moveVertical = ctrlDirection * Input.GetAxis("Vertical");
     #endif
+
         pos.Set(transform.position.x, Mathf.Clamp(transform.position.y, 3f, 60f), transform.position.z);
         transform.position = pos;
 
@@ -130,28 +121,20 @@ public class SquirrelController : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("acorn")) {
             other.gameObject.SetActive(false);
-            scoreScript.IncAcorns();
+            score.IncAcorns();
 
             acornParticles.Play(true);
-            acornParticles.Play(false);
-
             soundSource.dopplerLevel = 0.0f;
             soundSource.pitch = Random.Range(0.8f, 1.1f);
 
             int randomSound = Random.Range(0, 2);
-            if (randomSound == 0) {
-                soundSource.PlayOneShot(crunch1);
-            } else if (randomSound == 1) {
-                soundSource.PlayOneShot(crunch2);
-            } else {
-                soundSource.PlayOneShot(crunch3);
-            }
+            soundSource.PlayOneShot(crunchSounds[randomSound]);
         }
+
         if (other.gameObject.CompareTag("Boost")){
             other.gameObject.SetActive(false);
 
-            boostsAvailable += 1;
-            scoreScript.IncBoosts();
+            score.boostsAvailable += 1;
 
             soundSource.dopplerLevel = 0.0f;
             soundSource.pitch = Random.Range (0.8f, 1.1f);
@@ -168,20 +151,19 @@ public class SquirrelController : MonoBehaviour {
     }
 
     public void StartSpeedBoost() {
-        if (boostsAvailable > 0 && !boosting) {
+        if (score.boostsAvailable > 0 && !boosting) {
             boosting = true;
             StartCoroutine(SpeedBoost());
         }
     }
 
     IEnumerator SpeedBoost() {
-        boostStart = Time.time;
-        boostsAvailable -= 1;
+        float boostStart = Time.time;
+        score.boostsAvailable -= 1;
         soundSource.volume = 2.0f;
         soundSource.dopplerLevel = 0.0f;
         soundSource.pitch = Random.Range(0.8f, 1.1f);
         soundSource.PlayOneShot(boost);
-        scoreScript.DecBoosts();
         while (boosting) {
             if (Time.time - boostStart < 1.0f) {
                 forwardSpeed += 15.0f * Mathf.Cos(Mathf.PI * (Time.time - boostStart));
@@ -205,7 +187,7 @@ public class SquirrelController : MonoBehaviour {
     IEnumerator BarrelRoll(object dirObj) {
         int dir = (int)dirObj;
         float coroutineStart = Time.time;
-        currentX = transform.position.x;
+        float currentX = transform.position.x;
         soundSource.dopplerLevel = 0.0f;
         soundSource.pitch = Random.Range(0.8f, 1.1f);
         soundSource.PlayOneShot(barrelRollSound);

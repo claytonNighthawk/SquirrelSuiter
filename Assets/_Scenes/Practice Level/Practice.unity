@@ -202,7 +202,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 1000
+  far clip plane: 3000
   field of view: 66
   orthographic: 0
   orthographic size: 5
@@ -846,6 +846,30 @@ Prefab:
     - target: {fileID: 4525348441554880, guid: 4af8e9e6051bf3a4c8032cec5e88451a, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172674370528568, guid: 4af8e9e6051bf3a4c8032cec5e88451a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878821609725432, guid: 4af8e9e6051bf3a4c8032cec5e88451a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991542318125428, guid: 4af8e9e6051bf3a4c8032cec5e88451a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781754119873780, guid: 4af8e9e6051bf3a4c8032cec5e88451a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581728073676594, guid: 4af8e9e6051bf3a4c8032cec5e88451a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455311713770958, guid: 4af8e9e6051bf3a4c8032cec5e88451a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4af8e9e6051bf3a4c8032cec5e88451a, type: 2}

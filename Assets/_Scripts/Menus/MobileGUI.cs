@@ -5,12 +5,11 @@ using UnityEngine.UI;
 
 
 public class MobileGUI : MonoBehaviour {
-
-    private PlayerManager pm;
+    private PauseMenu pauseMenu;
 
 	void Start () {
         Canvas mobileGUI = GameObject.Find("/Mobile GUI").GetComponent<Canvas>();
-        pm = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<PlayerManager>();
+        pauseMenu = GameObject.Find("/Pause Menu").GetComponent<PauseMenu>();
     #if !MOBILE_INPUT
         Button pauseButton = GetComponentInChildren<Button>();
         mobileGUI.enabled = false;
@@ -19,6 +18,6 @@ public class MobileGUI : MonoBehaviour {
     }
 
     public void PauseGame() {
-        pm.SetPauseMenuState();
+        pauseMenu.SetMenuState();
     }
 }

@@ -238,16 +238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74715b5ece803c4a935441b0ff24fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainButton: {fileID: 114493037458426868}
-  scoreScript: {fileID: 114321986180429522, guid: a588fb1c3be55e74f9d579f6fb171173,
-    type: 2}
-  restartButton: {fileID: 114521631526141714}
-  es: {fileID: 0}
-  placeholderGameOver: {fileID: 114420447961209728}
-  acornNum: {fileID: 114194042812722906}
-  scoreNum: {fileID: 114005976314560272}
-  newHighScore: {fileID: 114330555101209544}
-  active: 0
 --- !u!114 &114133842564004866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -986,7 +976,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224743852474016980}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1027,9 +1017,9 @@ RectTransform:
   - {fileID: 224386455325744996}
   - {fileID: 224707155885983602}
   - {fileID: 224544928307161278}
-  - {fileID: 224659164809338876}
-  - {fileID: 224363777647269238}
   - {fileID: 224817479003011414}
+  - {fileID: 224363777647269238}
+  - {fileID: 224659164809338876}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1049,7 +1039,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224743852474016980}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

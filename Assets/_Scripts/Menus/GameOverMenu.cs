@@ -5,35 +5,28 @@ using UnityEngine.EventSystems;
 
 
 public class GameOverMenu : MonoBehaviour {
-    public bool active = false;
-
     private Button[] buttons;
-    private Button restartButton;
-    private Button placeholderGameOver;
-    private Text acornNum;
-    private Text scoreNum;
     private Text newHighScore;
     private Score scoreScript;
+    private PlayerManager pm;
 
     void Start() {
+        GetComponent<Canvas>().enabled = false;
         buttons = GetComponentsInChildren<Button>();
-        restartButton = buttons[0];
-        placeholderGameOver = buttons[2];
-        scoreNum = transform.Find("Score").GetComponent<Text>();
-        acornNum = transform.Find("Acorns").GetComponent<Text>();
-        newHighScore = transform.Find("New High Score").GetComponent<Text>();
-        scoreScript = GameObject.Find("ScoreCanvas").GetComponent<Score>();
+        scoreScript = GameObject.Find("/ScoreCanvas").GetComponent<Score>();
+        pm = GameObject.Find("/Player Manager").GetComponent<PlayerManager>();
     }
 
     public void PlayerDead() {
+        GetComponent<Canvas>().enabled = true;
     #if !MOBILE_INPUT
-        restartButton.Select();
+        buttons[0].Select();
     #endif
-        acornNum.text = "Acorns: " + scoreScript.acornNum.ToString();
-        scoreNum.text = "Score: " + scoreScript.scoreNum.ToString();
+        transform.Find("Acorns").GetComponent<Text>().text = "Acorns: " + scoreScript.acornNum.ToString();
+        transform.Find("Score").GetComponent<Text>().text = "Score: " + scoreScript.scoreNum.ToString();
 
         if (scoreScript.prevHigh >= scoreScript.scoreNum) {
-            newHighScore.enabled = false;
+            transform.Find("New High Score").GetComponent<Text>().enabled = false;
         }
     }
 
@@ -46,8 +39,8 @@ public class GameOverMenu : MonoBehaviour {
     }
 
     void Update() {
-        if (EventSystem.current.currentSelectedGameObject == null && active) {
-            placeholderGameOver.Select();
+        if (EventSystem.current.currentSelectedGameObject == null && pm.playerDead) {
+            buttons[2].Select();
         }
     }
 }

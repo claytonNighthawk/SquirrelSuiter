@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
-    public AudioClip musicLoop, pauseLoop, explosionSound;
+    public AudioClip musicLoop, pauseLoop;
     public bool playerDead { get; set; }
 
-    private GameObject gameOverMenu;
-    private GameObject pauseMenu;
+    private GameOverMenu gameOverMenu;
+    private PauseMenu pauseMenu;
     private CameraController camControl;
 
     private AudioSource music;
@@ -13,62 +13,44 @@ public class PlayerManager : MonoBehaviour {
     private float musicTime;
 
     void Awake () {
-        pauseMenu = GameObject.Find("/Pause Menu");
+        pauseMenu = GameObject.Find("/Pause Menu").GetComponent<PauseMenu>();
         camControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
-        gameOverMenu = GameObject.Find("/GameOver Menu");
-        pauseMenu.GetComponent<Canvas>().enabled = false;
+        gameOverMenu = GameObject.Find("/GameOver Menu").GetComponent<GameOverMenu>();
 
         music = GetComponent<AudioSource> ();
         atmosphere = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<AudioSource>();
         music.clip = musicLoop;
-        gameOverMenu.GetComponent<Canvas>().enabled = false;
         playerDead = false;
     }
 
     void Update() {
-        if (Input.GetButtonDown("Cancel")) {
-                SetPauseMenuState();
-        }
-    }
-
-    public void SetPauseMenuState() {
-        if (!gameOverMenu.GetComponent<Canvas>().enabled) {
-            if (pauseMenu.GetComponent<Canvas>().enabled) {
-                pauseMenu.GetComponent<Canvas>().enabled = false;
-                pauseMenu.GetComponent<PauseMenu>().Deactivate();
-                Time.timeScale = 1.0f;
-                switchMusic();
-                for (int a = 0; a < atmosphere.Length; a++) {
-                    atmosphere[a].Play();
-                }
-            } else {
-                pauseMenu.GetComponent<Canvas>().enabled = true;
-                pauseMenu.GetComponent<PauseMenu>().Activate();
-                Time.timeScale = 0;
-                switchMusic();
-                for (int i = 0; i < atmosphere.Length; i++) {
-                    atmosphere[i].Stop();
-                }
-            }
+        if (Input.GetButtonDown("Cancel") && !playerDead) {
+            pauseMenu.SetMenuState();
         }
     }
 
     public void Die() {
-        musicTime = music.time;
-        music.Stop();
-        music.clip = pauseLoop;
-        music.time = musicTime;
-        music.Play();
-
+        SwitchMusic();
         playerDead = true;
         camControl.Shake();
+
         GetComponents<AudioSource>()[1].Play();
-        gameOverMenu.GetComponent<Canvas>().enabled = true;
-        gameOverMenu.GetComponent<GameOverMenu>().active = true;
-        gameOverMenu.GetComponent<GameOverMenu>().PlayerDead();
+        gameOverMenu.PlayerDead();
     }
 
-    public void switchMusic() {
+    public void SetAtmosphere(bool playing) {
+        if (playing) {
+            for (int a = 0; a < atmosphere.Length; a++) {
+                atmosphere[a].Play();
+            }
+        } else {
+            for (int i = 0; i < atmosphere.Length; i++) {
+                atmosphere[i].Stop();
+            }
+        }
+    }
+
+    public void SwitchMusic() {
         if (music.clip == pauseLoop) {
             musicTime = music.time;
             music.Stop();

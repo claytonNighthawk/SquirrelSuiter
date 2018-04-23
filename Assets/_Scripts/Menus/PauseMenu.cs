@@ -5,42 +5,46 @@ using UnityEngine.EventSystems;
 
 
 public class PauseMenu : MonoBehaviour {
-
+    private PlayerManager pm;
     private Button[] buttons;
-    private bool active = false;
 
     void Start() {
         buttons = GetComponentsInChildren<Button>();
-        buttons[0].enabled = true;
-        buttons[1].enabled = true;
+        GetComponent<Canvas>().enabled = false;
+        pm = GameObject.Find("/Player Manager").GetComponent<PlayerManager>();
     }
 
     void Update() {
-        if (EventSystem.current.currentSelectedGameObject == null && active) {
+        if (EventSystem.current.currentSelectedGameObject == null && Time.timeScale == 0) {
             buttons[2].Select();
         }
     }
 
-    public void Activate() {
-        active = true;
-    #if !MOBILE_INPUT
-        if (Input.GetJoystickNames().Length > 0 && Input.GetJoystickNames()[0] != "") {
-            buttons[1].Select();
+    public void SetMenuState() {
+        if (GetComponent<Canvas>().enabled) {
+            GetComponent<Canvas>().enabled = false;
+            EventSystem.current.SetSelectedGameObject(null);
+            Time.timeScale = 1.0f;
+            pm.SwitchMusic();
+            pm.SetAtmosphere(true);
+        } else {
+            GetComponent<Canvas>().enabled = true;
+        #if !MOBILE_INPUT
+            if (Input.GetJoystickNames().Length > 0 && Input.GetJoystickNames()[0] != "") {
+                buttons[1].Select();
+            }
+        #endif
+            Time.timeScale = 0.0f;
+            pm.SwitchMusic();
+            pm.SetAtmosphere(false);
         }
-    #endif
-    }
-
-    public void Deactivate() {
-        active = false;
-        EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void RestartOrMenuPress(bool restart) {
+        Time.timeScale = 1;
         if (restart) {
-            Time.timeScale = 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         } else {
-            Time.timeScale = 1;
             SceneManager.LoadScene("Menu");
         }
     }

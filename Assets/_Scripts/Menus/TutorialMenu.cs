@@ -32,20 +32,23 @@ public class TutorialMenu : Menu {
     public void Next() {
         canvas.enabled = false;
         canvas2.enabled = true;
+    #if !MOBILE_INPUT
         EventSystem.current.SetSelectedGameObject(canvas2.gameObject.GetComponentInChildren<Button>().gameObject);
+    #endif
     }
 
     public override void SetActive(bool isActive) {
-        GameObject blankButton;
-        if (isActive) {
-            canvas.enabled = isActive;
-            blankButton = GetComponentInChildren<Button>().gameObject;
-        } else {
-            canvas.enabled = isActive;
-            canvas2.enabled = isActive;
-            blankButton = transform.parent.GetComponentInChildren<Button>().gameObject;
-        }
-        EventSystem.current.SetSelectedGameObject(blankButton);
+        canvas.enabled = isActive;
         StartMenu.SetActiveMenuButtons(!isActive);
+
+        Button[] buttons;
+        if (isActive) {
+            buttons = transform.GetChild(0).GetComponentsInChildren<Button>();
+        } else {
+            canvas2.enabled = isActive;
+            buttons = transform.parent.transform.GetChild(0).GetComponentsInChildren<Button>();
+        }
+        int activeIndex = Input.GetJoystickNames().Length > 0 && Input.GetJoystickNames()[0] != "" ? 0 : buttons.Length - 1;
+        EventSystem.current.SetSelectedGameObject(buttons[activeIndex].gameObject);
     }
 }

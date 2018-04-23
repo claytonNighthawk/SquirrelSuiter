@@ -14,6 +14,11 @@ public class CameraController : MonoBehaviour {
     private Vector3 offset;
 
     void Start() {
+        if (!PlayerPrefs.HasKey("cameraY")) {
+            print("cameraY doesnt exist!");
+            PlayerPrefs.SetFloat("cameraY", 17.0f);
+            PlayerPrefs.SetFloat("cameraZ", -7.0f);
+        }
         start.Set(transform.position.x, PlayerPrefs.GetFloat("cameraY"), PlayerPrefs.GetFloat("cameraZ"));
         transform.position = start;
         offset = transform.position - player.transform.position;
@@ -44,13 +49,10 @@ public class CameraController : MonoBehaviour {
 
     IEnumerator ShakeIE() {
         shaking = true;
-
         float elapsed = 0.0f;
-
         Vector3 originalCamPos = transform.position;
 
         while (elapsed < shakeDiration) {
-
             elapsed += Time.deltaTime;
 
             float percentComplete = elapsed / shakeDiration;
@@ -63,10 +65,8 @@ public class CameraController : MonoBehaviour {
             y *= magnitude * damper;
 
             transform.position = new Vector3(originalCamPos.x + x, originalCamPos.y + y, originalCamPos.z);
-
             yield return null;
         }
-
         transform.position = originalCamPos;
     }
 }

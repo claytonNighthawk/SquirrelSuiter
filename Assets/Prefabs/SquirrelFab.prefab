@@ -921,7 +921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e22ba0d95b77664e805802adb052c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrainWidth: 220
+  terrainWidth: 225
   directionalSpeed: 90
   forwardSpeed: 90
   mobileSpeedAddition: 10

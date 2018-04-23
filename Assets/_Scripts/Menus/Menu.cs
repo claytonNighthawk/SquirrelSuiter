@@ -9,21 +9,16 @@ public class Menu : MonoBehaviour {
         canvas.enabled = isActive;
         StartMenu.SetActiveMenuButtons(!isActive);
     #if !MOBILE_INPUT
-        GameObject blankButton = isActive ? GetComponentInChildren<Button>().gameObject : transform.parent.GetComponentInChildren<Button>().gameObject;
-        EventSystem.current.SetSelectedGameObject(blankButton);
+        Button[] buttons = isActive ? GetComponentsInChildren<Button>() : transform.parent.transform.GetChild(0).GetComponentsInChildren<Button>();
+        int activeIndex = Input.GetJoystickNames().Length > 0 && Input.GetJoystickNames()[0] != "" ? 0 : buttons.Length - 1;
+
+        print(buttons[activeIndex].gameObject);
+        EventSystem.current.SetSelectedGameObject(buttons[activeIndex].gameObject);
     #endif
     }
 
     public virtual void ActivateMenu() {
         string menuName = EventSystem.current.currentSelectedGameObject.tag;
         GameObject.Find(menuName).GetComponent<Menu>().SetActive(true);
-    }
-
-    void Start() {
-        if (!PlayerPrefs.HasKey("cameraY")) {
-            print("cameraY doesnt exist!");
-            PlayerPrefs.SetFloat("cameraY", 17.0f);
-            PlayerPrefs.SetFloat("cameraZ", -7.0f);
-        }
     }
 }

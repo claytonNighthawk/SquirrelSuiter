@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class MobileOptionsMenu : Menu {
-    // public Text rotationText;
+public class MobileOptionsMenu : OptionsMenu {
+    private Text rotataionText;
 
     void Awake() {
         canvas = GetComponent<Canvas>();
         canvas.enabled = false;
+        rotataionText = transform.Find("RotationText").GetComponent<Text>();
+        rotataionText.text = "";
     }
 
     public void CalibrateRotation() {
@@ -17,7 +20,7 @@ public class MobileOptionsMenu : Menu {
         PlayerPrefs.SetFloat("calibrationX", calibrationQuaternion.x);
         PlayerPrefs.SetFloat("calibrationY", calibrationQuaternion.y);
         PlayerPrefs.SetFloat("calibrationZ", calibrationQuaternion.z);
-        GetComponent<Text>().text = rotateQuaternion.eulerAngles.ToString();
+        rotataionText.text = rotateQuaternion.eulerAngles.ToString();
     }
 
     public void SetSwipeDist(int dist) {

@@ -6,22 +6,18 @@ using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour {
 
-    public Button mainButton;
-    public Button restartButton;
-    public EventSystem es;
-    public Button placeholderPause;
+    private Button[] buttons;
     public bool active = false;
 
     void Start() {
-        mainButton = mainButton.GetComponent<Button>();
-        restartButton = restartButton.GetComponent<Button>();
-        mainButton.enabled = true;
-        restartButton.enabled = true;
+        buttons = GetComponentsInChildren<Button>();
+        buttons[0].enabled = true;
+        buttons[1].enabled = true;
     }
 
     void Update() {
-        if (es.currentSelectedGameObject == null && active) {
-            placeholderPause.Select();
+        if (EventSystem.current.currentSelectedGameObject == null && active) {
+            buttons[2].Select();
         }
     }
 
@@ -29,21 +25,21 @@ public class PauseMenu : MonoBehaviour {
         active = true;
     #if !MOBILE_INPUT
         if (Input.GetJoystickNames().Length > 0 && Input.GetJoystickNames()[0] != "") {
-            restartButton.Select();
+            buttons[1].Select();
         }
     #endif
     }
 
     public void Deactivate() {
         active = false;
-        placeholderPause.Select();
+        buttons[2].Select();
     }
 
-    public void ReturnPress() {
-        SceneManager.LoadScene(0);
-    }
-
-    public void RestartPress() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    public void RestartOrMenuPress(bool restart) {
+        if (restart) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        } else {
+            SceneManager.LoadScene("Menu");
+        }
     }
 }

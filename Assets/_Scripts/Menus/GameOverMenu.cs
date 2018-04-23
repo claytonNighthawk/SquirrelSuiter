@@ -5,20 +5,24 @@ using UnityEngine.EventSystems;
 
 
 public class GameOverMenu : MonoBehaviour {
-    public Button mainButton;
-    public ScoreText scoreScript;
-    public Button restartButton;
-    public EventSystem es;
-    public Button placeholderGameOver;
-    public Text acornNum;
-    public Text scoreNum;
-    public Text newHighScore;
-    
     public bool active = false;
 
+    private Button[] buttons;
+    private Button restartButton;
+    private Button placeholderGameOver;
+    private Text acornNum;
+    private Text scoreNum;
+    private Text newHighScore;
+    private ScoreText scoreScript;
+
     void Start() {
-        mainButton = mainButton.GetComponent<Button>();
-        scoreScript = scoreScript.GetComponent<ScoreText>();
+        buttons = GetComponentsInChildren<Button>();
+        restartButton = buttons[0];
+        placeholderGameOver = buttons[2];
+        scoreNum = transform.Find("Score").GetComponent<Text>();
+        acornNum = transform.Find("Acorns").GetComponent<Text>();
+        newHighScore = transform.Find("New High Score").GetComponent<Text>();
+        scoreScript = GameObject.Find("ScoreCanvas").GetComponent<ScoreText>();
     }
 
     public void PlayerDead() {
@@ -43,7 +47,7 @@ public class GameOverMenu : MonoBehaviour {
     }
 
     void Update() {
-        if (es.currentSelectedGameObject == null && active) {
+        if (EventSystem.current.currentSelectedGameObject == null && active) {
             placeholderGameOver.Select();
         }
     }

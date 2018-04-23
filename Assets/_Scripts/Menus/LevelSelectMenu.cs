@@ -4,11 +4,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 public class LevelSelectMenu : Menu {
-    //Button[] levelSelectButtons;
 
     void Awake() {
         canvas = GetComponent<Canvas>();
-        //levelSelectButtons = GetComponentsInChildren<Button>();
         canvas.enabled = false;
     }
 

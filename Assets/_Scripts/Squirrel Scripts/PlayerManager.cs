@@ -2,50 +2,50 @@
 using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour {
-    public Canvas pauseMenu;
-    public PauseMenu pauseMenuScript;
-    public CameraController camControl;
-	public AudioClip musicLoop, pauseLoop;
-    public Canvas gameOverCanvas;
-    public GameOverMenu gameOverScript;
-    public ScoreText scoreScript;
+    public AudioClip musicLoop, pauseLoop, explosionSound;
 
-    private AudioSource music; 
-	private AudioSource[] atmosphere;
-	private float musicTime;
+    private GameObject gameOverMenu;
+    private GameObject pauseMenu;
+    private CameraController camControl;
 
-	void Start () {
-        pauseMenu.enabled = false;
-		music = GetComponent<AudioSource> ();
-		atmosphere = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<AudioSource>();
-		music.clip = musicLoop;
-        gameOverCanvas.enabled = false;
+    private AudioSource music;
+    private AudioSource[] atmosphere;
+    private float musicTime;
+
+    void Start () {
+        pauseMenu = GameObject.Find("/Pause Menu");
+        camControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
+        gameOverMenu = GameObject.Find("/GameOver Menu");
+        pauseMenu.GetComponent<Canvas>().enabled = false;
+
+        music = GetComponent<AudioSource> ();
+        atmosphere = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<AudioSource>();
+        music.clip = musicLoop;
+        gameOverMenu.GetComponent<Canvas>().enabled = false;
     }
 
     void Update() {
         if (Input.GetButtonDown("Cancel")) {
                 ActivatePauseMenu();
-		}
+        }
     }
 
     public void ActivatePauseMenu() {
-        if (!gameOverCanvas.enabled) {
-            if (pauseMenu.enabled) {
-                pauseMenu.enabled = false;
-                pauseMenuScript.Deactivate();
+        if (!gameOverMenu.GetComponent<Canvas>().enabled) {
+            if (pauseMenu.GetComponent<Canvas>().enabled) {
+                pauseMenu.GetComponent<Canvas>().enabled = false;
+                pauseMenu.GetComponent<PauseMenu>().Deactivate();
                 Time.timeScale = 1.0f;
                 switchMusic();
-                int arraySize = atmosphere.Length;
-                for (int a = 0; a < arraySize; a++) {
+                for (int a = 0; a < atmosphere.Length; a++) {
                     atmosphere[a].Play();
                 }
             } else {
-                pauseMenu.enabled = true;
-                pauseMenuScript.Activate();
+                pauseMenu.GetComponent<Canvas>().enabled = true;
+                pauseMenu.GetComponent<PauseMenu>().Activate();
                 Time.timeScale = 0;
                 switchMusic();
-                int arraySize = atmosphere.Length;
-                for (int i = 0; i < arraySize; i++) {
+                for (int i = 0; i < atmosphere.Length; i++) {
                     atmosphere[i].Stop();
                 }
             }
@@ -53,31 +53,32 @@ public class PlayerManager : MonoBehaviour {
     }
 
     public void Die() {
-		musicTime = music.time;
-		music.Stop();
-		music.clip = pauseLoop;
-		music.time = musicTime;
-		music.Play();
+        musicTime = music.time;
+        music.Stop();
+        music.clip = pauseLoop;
+        music.time = musicTime;
+        music.Play();
 
         camControl.Shake();
-        gameOverCanvas.enabled = true;
-        gameOverScript.active = true;
-        gameOverScript.PlayerDead();
+        GetComponents<AudioSource>()[1].Play();
+        gameOverMenu.GetComponent<Canvas>().enabled = true;
+        gameOverMenu.GetComponent<GameOverMenu>().active = true;
+        gameOverMenu.GetComponent<GameOverMenu>().PlayerDead();
     }
 
-	public void switchMusic() {
-		if (music.clip == pauseLoop) {
-			musicTime = music.time;
+    public void switchMusic() {
+        if (music.clip == pauseLoop) {
+            musicTime = music.time;
             music.Stop();
-			music.clip = musicLoop;
-			music.time = musicTime;
-			music.Play();
-		} else {
-			musicTime = music.time;
-			music.Stop();
-			music.clip = pauseLoop;
-			music.time = musicTime;
-			music.Play();
-		}
-	}
+            music.clip = musicLoop;
+            music.time = musicTime;
+            music.Play();
+        } else {
+            musicTime = music.time;
+            music.Stop();
+            music.clip = pauseLoop;
+            music.time = musicTime;
+            music.Play();
+        }
+    }
 }

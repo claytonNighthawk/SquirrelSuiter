@@ -1,11 +1,21 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class OptionsMenu : Menu {
-    // public Button optionsSetInverted;
-    // public Button optionsMobileMenu;
 
     void Awake() {
         canvas = GetComponent<Canvas>();
+        canvas.enabled = false;
+
+    #if !MOBILE_INPUT
+        var mobileOptionsButton = transform.Find("MobileOptions").gameObject;
+        mobileOptionsButton.SetActive(false);
+    #endif
+    }
+
+    public override void ActivateMenu() {
+        base.ActivateMenu();
         canvas.enabled = false;
     }
 
@@ -26,6 +36,4 @@ public class OptionsMenu : Menu {
         PlayerPrefs.SetFloat("cameraY", cameraY);
         PlayerPrefs.SetFloat("cameraZ", cameraZ);
     }
-
-
 }

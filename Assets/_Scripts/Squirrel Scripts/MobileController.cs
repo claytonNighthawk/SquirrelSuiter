@@ -2,13 +2,9 @@
 
 public class MobileController : MonoBehaviour {
 
-    public SquirrelController sqc;
-    public PlayerManager pm;
     private float minSwipeDist = 5;
-    private float swipeDirection;
 
     public void Start() {
-       
         if (PlayerPrefs.HasKey("swipeDist")) {
             minSwipeDist = PlayerPrefs.GetFloat("swipeDist");
         } else {
@@ -22,10 +18,10 @@ public class MobileController : MonoBehaviour {
 
             if (touch.phase == TouchPhase.Ended) {
                 if (Mathf.Abs(touch.deltaPosition.sqrMagnitude) >= minSwipeDist * minSwipeDist) {
-                    swipeDirection = Mathf.Sign(touch.deltaPosition.x);
-                    sqc.StartBarrelRoll((int)swipeDirection);
+                    float swipeDirection = Mathf.Sign(touch.deltaPosition.x);
+                    GetComponent<SquirrelController>().StartBarrelRoll((int)swipeDirection);
                 } else {
-                    sqc.StartSpeedBoost();
+                    GetComponent<SquirrelController>().StartSpeedBoost();
                 }
             }
         }

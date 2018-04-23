@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour {
     protected Canvas canvas;
@@ -7,6 +8,15 @@ public class Menu : MonoBehaviour {
     public virtual void SetActive(bool isActive) {
         canvas.enabled = isActive;
         StartMenu.SetActiveMenuButtons(!isActive);
+    #if !MOBILE_INPUT
+        GameObject blankButton = isActive ? GetComponentInChildren<Button>().gameObject : transform.parent.GetComponentInChildren<Button>().gameObject;
+        EventSystem.current.SetSelectedGameObject(blankButton);
+    #endif
+    }
+
+    public virtual void ActivateMenu() {
+        string menuName = EventSystem.current.currentSelectedGameObject.tag;
+        GameObject.Find(menuName).GetComponent<Menu>().SetActive(true);
     }
 
     void Start() {

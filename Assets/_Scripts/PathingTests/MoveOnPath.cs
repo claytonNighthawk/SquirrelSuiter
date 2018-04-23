@@ -16,13 +16,13 @@ public class MoveOnPath : MonoBehaviour {
     private Vector3 current_pos;
 
 
-	void Start () {
+    void Start () {
         last_pos = transform.position;
         squirrel = this.transform.GetChild(0).gameObject;
 
-	}
-	
-	void FixedUpdate () {
+    }
+    
+    void FixedUpdate () {
         Vector3 destination = Path.path_objs[currentWayPoint].position;
 
         Quaternion rotation = Quaternion.LookRotation(destination - transform.position);
@@ -34,5 +34,5 @@ public class MoveOnPath : MonoBehaviour {
         if (dist < reachDist) {
             currentWayPoint = (currentWayPoint + 1) % Path.path_objs.Count;
         }
-	}
+    }
 }

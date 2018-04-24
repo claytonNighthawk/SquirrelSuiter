@@ -6,9 +6,9 @@ Squirrel Suiter is an endless “flyer” game where you play as a jetpack-equip
 
 • All assets except skyboxes and textures were made by the team.
 
-•	Personal contributions to original project include: physics, UI, level design.
+•	Personal contributions to original project include: physics, UI / Menus, player management, and level design.
 
-•	Extensions to the game: ported the game to android, added full controller support, created an options menu, and refactored the codebase extensively.
+•	Extensions to the game: ported the game to Android, added full controller navigation for menus, created an options menu, and refactored the codebase extensively.
 
 Original Team: Jared Galloway, Clayton Kilmer, Palmer Hogan, Anisha Malynur, Brett Merrill. 
 

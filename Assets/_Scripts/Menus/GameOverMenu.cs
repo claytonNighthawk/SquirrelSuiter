@@ -30,7 +30,7 @@ public class GameOverMenu : MonoBehaviour {
     }
 
     public void MainMenuPress() {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Menu");
     }
 
     public void RestartPress() {

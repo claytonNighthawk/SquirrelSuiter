@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 
 public class ExitMenu : Menu {
-    //public Button exitYes;
-    //public Button exitNo;
 
     void Awake() {
         canvas = GetComponent<Canvas>();

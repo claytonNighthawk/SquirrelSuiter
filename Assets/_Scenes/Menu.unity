@@ -3190,6 +3190,7 @@ GameObject:
   - component: {fileID: 553540490}
   - component: {fileID: 553540489}
   - component: {fileID: 553540488}
+  - component: {fileID: 553540491}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -3268,6 +3269,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 553540486}
+--- !u!114 &553540491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 553540486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &658774511
 GameObject:
   m_ObjectHideFlags: 0
@@ -5348,6 +5363,7 @@ GameObject:
   - component: {fileID: 1093017227}
   - component: {fileID: 1093017226}
   - component: {fileID: 1093017225}
+  - component: {fileID: 1093017228}
   m_Layer: 5
   m_Name: Tutorial
   m_TagString: Untagged
@@ -5426,6 +5442,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1093017223}
+--- !u!114 &1093017228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1093017223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1130090326
 GameObject:
   m_ObjectHideFlags: 0
@@ -8705,6 +8735,7 @@ GameObject:
   - component: {fileID: 2047873917}
   - component: {fileID: 2047873916}
   - component: {fileID: 2047873915}
+  - component: {fileID: 2047873918}
   m_Layer: 5
   m_Name: Tutorial
   m_TagString: Untagged
@@ -8783,6 +8814,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2047873913}
+--- !u!114 &2047873918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2047873913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2055117344
 GameObject:
   m_ObjectHideFlags: 0
@@ -8851,10 +8896,10 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Team Members:\n\nJared Galloway: \nProject Manager, Level Design, Physics\n\nClayton
-    Kilmer: \nUI and menus, Physics, Level Design, full controller support, Android
-    Port\n\nPalmer Hogan:\nAudio, Obsticle Behavior, Physics, Level Design\n\nAnisha
+    Kilmer: \nUI, Player Management, Physics, Level Design, Full Controller Navigation,
+    Android Port\n\nPalmer Hogan:\nAudio, Obsticle Behavior, Physics, Level Design\n\nAnisha
     Malynur:\n3D Modeling, Level Design, Physics\n\nBrett Merill: \n3D Modeling, Level
-    Design"
+    Design, Tile Manager"
 --- !u!222 &2055117347
 CanvasRenderer:
   m_ObjectHideFlags: 0

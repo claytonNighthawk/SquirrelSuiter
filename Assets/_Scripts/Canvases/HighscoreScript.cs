@@ -2,8 +2,6 @@
 using UnityEngine.UI;
 
 public class HighscoreScript : MonoBehaviour {
-    [HideInInspector]
-    public int prevHigh;
     public Text highScore1;
     public Text highScore2;
     public Text highScore3;
@@ -25,6 +23,7 @@ public class HighscoreScript : MonoBehaviour {
     }
 
     public void SetHighscores() {
+        int prevHigh;
         prevHigh = PlayerPrefs.GetInt("HighScore1", 0);
         highScore1.text = prevHigh.ToString();
         prevHigh = PlayerPrefs.GetInt("HighScore2", 0);

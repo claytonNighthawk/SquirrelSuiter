@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 
 public class GameOverMenu : MonoBehaviour {
     private Button[] buttons;
-    private Text newHighScore;
     private Score scoreScript;
     private PlayerManager pm;
 

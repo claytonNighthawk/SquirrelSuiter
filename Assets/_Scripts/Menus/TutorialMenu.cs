@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class TutorialMenu : Menu {
     Canvas canvas2;
+    private Text tutorial1Body;
+    private Text tutorial2Body;
 
     private string controllerTutorial1 = "Avoid obstacles. \n\nCollect acorns and stay alive to score points. \n\nUse the left stick to move. \n\nIf you would like inverted controls or a closer camera you can turn them on in the Options menu.";
     private string controllerTutorial2 = "To barrel roll, hold in the direction you would like to roll and press X. \n\nSome levels have boost pickups. Activate them by pressing B. \n\nStart will bring up a pause Menu.";
@@ -14,18 +16,21 @@ public class TutorialMenu : Menu {
         Canvas[] tutorialCanvases = GetComponentsInChildren<Canvas>();
         canvas = tutorialCanvases[0];
         canvas2 = tutorialCanvases[1];
-
         canvas.enabled = false;
         canvas2.enabled = false;
 
+        tutorial1Body = GameObject.Find("Tutorial1/Body").GetComponent<Text>();
+        tutorial2Body = GameObject.Find("Tutorial2/Body").GetComponent<Text>();
+
+
     #if !MOBILE_INPUT
         if (Input.GetJoystickNames().Length > 0 && Input.GetJoystickNames()[0] != "") {
-            GameObject.Find("Tutorial1/Body").GetComponent<Text>().text = controllerTutorial1;
-            GameObject.Find("Tutorial2/Body").GetComponent<Text>().text = controllerTutorial2;
+            tutorial1Body.text = controllerTutorial1;
+            tutorial2Body.text = controllerTutorial2;
         }
     #else
-        GameObject.Find("Tutorial1/Body").GetComponent<Text>().text = mobileTutorial1;
-        GameObject.Find("Tutorial2/Body").GetComponent<Text>().text = mobileTutorial2;
+        tutorial1Body.text = mobileTutorial1;
+        tutorial2Body.text = mobileTutorial2;
     #endif
     }
 
@@ -33,7 +38,7 @@ public class TutorialMenu : Menu {
         canvas.enabled = false;
         canvas2.enabled = true;
     #if !MOBILE_INPUT
-        EventSystem.current.SetSelectedGameObject(canvas2.gameObject.GetComponentInChildren<Button>().gameObject);
+        EventSystem.current.SetSelectedGameObject(canvas2.GetComponentInChildren<Button>().gameObject);
     #endif
     }
 
@@ -46,7 +51,7 @@ public class TutorialMenu : Menu {
             buttons = transform.GetChild(0).GetComponentsInChildren<Button>();
         } else {
             canvas2.enabled = isActive;
-            buttons = transform.parent.transform.GetChild(0).GetComponentsInChildren<Button>();
+            buttons = transform.parent.GetChild(0).GetComponentsInChildren<Button>();
         }
         int activeIndex = Input.GetJoystickNames().Length > 0 && Input.GetJoystickNames()[0] != "" ? 0 : buttons.Length - 1;
         EventSystem.current.SetSelectedGameObject(buttons[activeIndex].gameObject);

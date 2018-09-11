@@ -1,5 +1,9 @@
 # SquirrelSuiter
 
+[WebGL Build of the game](https://claytonnighthawk.github.io/SquirrelSuiter/WebGLBuild/index.html)
+
+[Google Play](https://play.google.com/store/apps/details?id=com.Nighthawks.SquirrelSuiter&hl=en_US)
+
 Squirrel Suiter is an endless “flyer” game where you play as a jetpack-equipped flying squirrel, avoiding obstacles and munching acorns to gain the highest score.
 
 •	Squirrel Suiter has multiple procedurally generated levels each with a different theme. 
@@ -13,5 +17,3 @@ Squirrel Suiter is an endless “flyer” game where you play as a jetpack-equip
 Original Team: Jared Galloway, Clayton Kilmer, Palmer Hogan, Anisha Malynur, Brett Merrill. 
 
 Extended by Clayton Kilmer.
-
-[WebGL Build of the game](https://claytonnighthawk.github.io/SquirrelSuiter/WebGLBuild/index.html)

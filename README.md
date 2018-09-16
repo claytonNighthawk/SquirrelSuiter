@@ -2,9 +2,9 @@
 
 ### Squirrel Suiter is released on multiple platforms 
 
-[WebGL](https://claytonnighthawk.github.io/SquirrelSuiter/WebGLBuild/index.html)
+#### [WebGL](https://claytonnighthawk.github.io/SquirrelSuiter/WebGLBuild/index.html)
 
-[Google Play](https://play.google.com/store/apps/details?id=com.Nighthawks.SquirrelSuiter&hl=en_US)
+#### [Google Play Store](https://play.google.com/store/apps/details?id=com.Nighthawks.SquirrelSuiter&hl=en_US)
 
 and can be built into a stand-alone application using Unity3D. 
 

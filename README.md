@@ -1,6 +1,6 @@
 # SquirrelSuiter
 
-Squirrel Suiter is released on multiple platforms 
+### Squirrel Suiter is released on multiple platforms 
 
 [WebGL](https://claytonnighthawk.github.io/SquirrelSuiter/WebGLBuild/index.html)
 
@@ -8,7 +8,7 @@ Squirrel Suiter is released on multiple platforms
 
 and can be built into a stand-alone application using Unity3D. 
 
-Squirrel Suiter is an endless “flyer” where you play as a jetpack-equipped flying squirrel, avoiding obstacles and munching acorns to gain the highest score.
+#### Squirrel Suiter is an endless “flyer” where you play as a jetpack-equipped flying squirrel, avoiding obstacles and munching acorns to gain the highest score.
 
 •	Squirrel Suiter has multiple procedurally generated levels each with a different theme. 
 
